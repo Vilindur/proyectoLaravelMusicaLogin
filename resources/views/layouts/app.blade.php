@@ -1,3 +1,4 @@
+<!-- filepath: d:\dev\dwes_laravel\proyectoLaravelMusicaLogin\resources\views\layouts\app.blade.php -->
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
@@ -16,7 +17,21 @@
 
         <!-- Styles -->
         @livewireStyles
+
+        <style>
+            .main-bg {
+                background-image: url('{{ asset('img/background4.png') }}');
+                background-size: cover;
+                background-position: center;
+                color: white;
+                min-height: 100vh;
+            }
+            .text-white {
+                color: white;
+            }
+        </style>
     </head>
+
     <body class="font-sans antialiased">
         <x-banner />
 
@@ -26,7 +41,7 @@
 
             <!-- Page Heading -->
             @if (isset($header))
-                <header class="bg-white shadow">
+                <header class="bg-white shadow text-white">
                     <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
                         {{ $header }}
                     </div>
@@ -34,7 +49,7 @@
             @endif
 
             <!-- Page Content -->
-            <main>
+            <main class="main-bg">
                 {{ $slot }}
             </main>
         </div>
